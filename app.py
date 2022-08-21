@@ -58,6 +58,5 @@ def predict():
       text = "It is not Fraud"
 
      return render_template('index.html', prediction_text= 'Prediction says: {}'.format(text))
-  
 if __name__=="__main__":
    app.run()
