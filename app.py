@@ -61,7 +61,7 @@ def predict():
       prediction = model4.predict([[AccX   ,   AccY   ,   AccZ  ,   GyroX   ,  GyroY  ,   GyroZ , Timestamp]])
 
     
-      if prediction == [0]:
+     if prediction == [0]:
       text = "Driving Behavior is slow"
      elif prediction == [1]:
       text = "Driving Behavior is Normal"
