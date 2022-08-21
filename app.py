@@ -61,10 +61,12 @@ def predict():
       prediction = model4.predict([[AccX   ,   AccY   ,   AccZ  ,   GyroX   ,  GyroY  ,   GyroZ , Timestamp]])
 
     
-     if prediction == [1]:
-      text = "It is a Fraud"
+      if prediction == [0]:
+      text = "Driving Behavior is slow"
+     elif prediction == [1]:
+      text = "Driving Behavior is Normal"
      else:
-      text = "It is not Fraud"
+      text = "Driving Behavior is Aggressive"
 
      return render_template('index.html', prediction_text= 'Prediction says: {}'.format(text))
 if __name__=="__main__":
