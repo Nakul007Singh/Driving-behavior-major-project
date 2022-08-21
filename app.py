@@ -2,18 +2,18 @@
 
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_ngrok import run_with_ngrok
+
 import pickle
 
 
 app = Flask(__name__)
 
-model0 = pickle.load(open('/content/drive/My Drive/Colab Notebooks/Logistic_MajorX.pkl','rb'))
-model1 = pickle.load(open('/content/drive/My Drive/Colab Notebooks/KNN_MajorX.pkl','rb'))
-model2 = pickle.load(open('/content/drive/My Drive/Colab Notebooks/Decision-Tree_MajorX.pkl','rb'))
-model3 = pickle.load(open('/content/drive/My Drive/Colab Notebooks/Random-Forest_MajorX.pkl','rb'))
-model4 = pickle.load(open('/content/drive/My Drive/Colab Notebooks/SVM_MajorX.pkl','rb'))
-run_with_ngrok(app)
+model0 = pickle.load(open('Logistic_MajorX.pkl','rb'))
+model1 = pickle.load(open('KNN_MajorX.pkl','rb'))
+model2 = pickle.load(open('Decision-Tree_MajorX.pkl','rb'))
+model3 = pickle.load(open('Random-Forest_MajorX.pkl','rb'))
+model4 = pickle.load(open('SVM_MajorX.pkl','rb'))
+
 
 @app.route('/')
 def home():
@@ -59,4 +59,5 @@ def predict():
 
      return render_template('index.html', prediction_text= 'Prediction says: {}'.format(text))
 if __name__=="__main__":
-   app.run()
+
+    app.run() 
