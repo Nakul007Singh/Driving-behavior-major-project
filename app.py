@@ -20,6 +20,15 @@ def home():
   
     return render_template("index.html")
   
+#------------------------------About us-------------------------------------------
+@app.route('/aboutusnew')
+def aboutusnew():
+    return render_template('aboutusnew.html')
+#------------------------------minors-------------------------------------------
+@app.route('/minors')
+def minors():
+    return render_template('minors.html')
+  
 @app.route('/predict',methods=['GET'])
 
 def predict():
